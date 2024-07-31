@@ -1,0 +1,41 @@
+#homepage-section {
+  height: 100%;
+  width: 100%;
+  background-color: var(--backgroundPrimary);
+  border-bottom: 1px solid black ;
+}
+
+.home-page-content{
+  color: var(--contentPrimary);
+  margin: 0px;
+  font-size: 4rem;
+
+}
+
+#about-section {
+  height: 100%;
+  width: 100%;
+  border-bottom: 1px solid black ;
+}
+
+#skills-section {
+  height: 100%;
+  width: 100%;
+  border-bottom: 1px solid black ;
+}
+#experience-section {
+  height: 100%;
+  width: 100%;
+  border-bottom: 1px solid black ;
+}
+#education-section {
+  height: 100%;
+  width: 100%;
+  border-bottom: 1px solid black ;
+}
+#contact-section {
+  height: 100%;
+  width: 100%;
+  border-bottom: 1px solid black ;
+}
+
