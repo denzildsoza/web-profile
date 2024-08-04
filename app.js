@@ -1,4 +1,4 @@
-import { createApp } from "petite-vue";
+import { createApp } from "./node_modules/petite-vue/dist/petite-vue.es.js";
 import store from "./scripts/globalStore.js";
 import navBar from "./scripts/navBar.js";
 import welcomeUser from "./scripts/WelcomeUser.js";
@@ -6,6 +6,5 @@ import welcomeUser from "./scripts/WelcomeUser.js";
 createApp({
   ...store,
   ...navBar,
-  pages: ["profile", "skills", "experience", "education", "contact"],
   ...welcomeUser,
 }).mount("#body");

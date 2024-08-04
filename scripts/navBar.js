@@ -1,6 +1,7 @@
 const navBar = {
   pageActive: "",
-
+  pages: ["profile", "skills", "experience", "education", "contact"],
+  
   activePageClass(item) {
     if (item !== this.pageActive) return "";
     return "pageActive";
