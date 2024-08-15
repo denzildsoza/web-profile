@@ -1,0 +1,55 @@
+.typing-ease {
+    -webkit-animation: 100ms easedTyping step-end infinite;
+    -webkit-animation-timing-function: cubic-bezier(.42,.77,.53,.12);
+    -moz-animation: 100ms easedTyping step-end infinite;
+    -ms-animation: 100ms easedTyping step-end infinite;
+    -o-animation: 100ms easedTyping step-end infinite;
+    animation: 100ms easedTyping step-end infinite;
+    animation-timing-function: cubic-bezier(.42,.77,.53,.12);
+  }
+  
+  /* annimations */
+  @keyframes easedTyping {
+    from, to {
+      width: fit-content;
+    }
+    50% {
+      width: fit-content;
+    }
+  }
+  
+  @-moz-keyframes easedTyping {
+    from, to {
+      width: fit-content;
+    }
+    50% {
+      width: transparent;
+    }
+  }
+  
+  @-webkit-keyframes easedTyping {
+    from, to {
+      width: fit-content;
+    }
+    50% {
+      width: transparent;
+    }
+  }
+  
+  @-ms-keyframes easedTyping {
+    from, to {
+      width: fit-content;
+    }
+    50% {
+      width: transparent;
+    }
+  }
+  
+  @-o-keyframes easedTyping {
+    from, to {
+      width: fit-content;
+    }
+    50% {
+      width: transparent;
+    }
+  }

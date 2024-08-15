@@ -3,61 +3,333 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="./public/favicon.svg"
+      sizes="20px"
+      type="image/svg+xml"
+    />
     <title>Denzil Dsouza</title>
     <link rel="stylesheet" href="./stylesheets/root.css" />
     <link rel="stylesheet" href="./stylesheets/pageSections.css" />
     <link rel="stylesheet" href="./stylesheets/welcomepage.css" />
+    <link rel="stylesheet" href="./stylesheets/common.css" />
     <link rel="stylesheet" href="./stylesheets/navBar.css" />
+    <link rel="stylesheet" href="./stylesheets/skillsGrid.css" />
     <link rel="stylesheet" href="./assets/animations/bounce.css" />
     <link rel="stylesheet" href="./assets/fonts/poppins.css" />
+    <link rel="stylesheet" href="./assets/animations/typingAnimation.css" />
+    <link rel="stylesheet" href="./assets/animations/transformOutOfView.css" />
 
     <!-- global-scope-variables-start -->
     <script>
       var tabs = 6;
     </script>
     <!-- global-scope-variables-end -->
-
   </head>
-  <body id="body">
-    <div
-      id="wrapper-main"
-      @scroll="onScrollChange(event,store)"
-    >
-      <div
-        id="nav-bar-wrapper"
-        :class="{ bounceOnce: store.scroll!==0,primaryBackground: store.scroll!==0 }"
-      >
-        <div>
+
+  <body v-scope id="body" :class="{ displayblock: true}">
+    <!-- <div id="welcome-page">
+      <div id="welcome-page-content">
+        <span
+        :mounted="welcomeClient($el,welcomeText,100)"
+        class="welcome-text poppins-bold"
+      ></span>
+      <span id="blinking-cursor" class="welcome-text">|</span>
+      </div> -->
+    <!-- </div> -->
+    <div id="wrapper-main" @scroll="onScrollChange($el)">
+      <div id="nav-bar-wrapper">
+        <!-- <div>
           <p id="home-nav-content" class="poppins-bold">Denzil Dsouza</p>
-        </div>
+        </div> -->
         <div id="nav-bar-content">
           <p
-            v-for="(item, index) in ['profile','skills','experience','education','contact']"
+            v-for="(item, index) in pages"
             :key="index"
-            :class="['poppins-regular',store.activePageClass(item)]"
+            class="poppins-regular navbarText padding-4px"
+            :class="[activePageClass(item.name)]"
+            @click="scrollIntoView($el,item.id)"
           >
-            {{item}}
+            {{item.name}}
           </p>
         </div>
       </div>
-      <section id="homepage-section">
-        <p class="home-page-content poppins-bold">
-         {{console.log(store.scroll)}}
-        </p>
-        <p class="home-page-content poppins-bold">
-          Denzil
-        </p>
-        <p class="home-page-content poppins-bold">
-          Dsouza.
-        </p>
+
+      <section
+        id="homepage-section"
+        v-effect="setPageActive($el,'home',scroll)"
+        class="flex-center height100fitcontent"
+      >
+        <div id="home-page-content">
+          <div id="home-page-content-right">
+            <p class="poppins-light heading margin-bottom-16">
+              i'm denzil, full stack web developer based in bengaluru.
+            </p>
+            <p class="poppins-thin heading margin-bottom-8">
+              i excel at design and development of high performance web
+              applications.
+            </p>
+            <p class="poppins-thin heading">
+              this is just the tip of the iceberg of what I can truly offer.
+            </p>
+          </div>
+        </div>
       </section>
-      <section id="about-section"></section>
-      <section id="skills-section"></section>
-      <section id="experience-section"></section>
-      <section id="education-section"></section>
-      <section id="contact-section"></section>
+
+      <section
+        id="about-section"
+        v-effect="setPageActive($el,'profile',scroll)"
+        class="flex-center height100fitcontent"
+      >
+        <div id="about-page-content">
+          <div id="about-text-content">
+            <p
+              class="poppins-semibold margin-bottom-16 about headingCharacters100"
+            >
+              About
+            </p>
+            <p
+              id="about-page-text"
+              class="textCharacters100 poppins-regular textJustify"
+            >
+              Hello! i am Denzil Dsouza, a senior full stack web developer with
+              over 2 years of industry experience building high performance web
+              applications, in leading frame works such has react, node and much
+              more. Has of now i am working has executive software engineer in
+              softsuave technologies.
+            </p>
+            <p
+              class="about-page-below-text textCharacters100 poppins-regular textJustify"
+            >
+              I am a passionate software engineer with code quality has my top
+              priority. I work with a strong work ethic delivering projects in
+              time or a head of schedule. I believe in systematic approches of
+              software development such has devops and CD/CI for effective and
+              efficient product delivery. I love to work has a team, colaborate
+              with co-developers, my and my goal has always been to be a
+              scrum-master.
+            </p>
+            <p
+              class="about-page-below-text textCharacters100 poppins-regular textJustify"
+            >
+              When I'm not coding, I enjoy exploring new technologies,
+              contributing to open-source projects, and brainstorming innovative
+              ideas with fellow developers.
+            </p>
+          </div>
+          <div>
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS61bvyfBR5Atirpdsm3JDd0rNp5vqnBBLrOA&s"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="skills-section"
+        class="flex-center"
+        v-effect="setPageActive($el,'skills',scroll)"
+      >
+        <div id="skill-page-content" class="skills-page-grid">
+          <div id="frontEnd">
+            <div id="programming">
+              <div id="javascript">
+                <img src="./assets/images/javascript.svg" loading="lazy" />
+              </div>
+              <div id="petiteVue">
+                <img src="./assets/images/petiteVue.svg" loading="lazy" />
+              </div>
+              <div id="webPack">
+                <img src="./assets/images/webPack.svg" loading="lazy" />
+              </div>
+              <div id="react" class="flex-center flex-column box-shadow">
+                <img src="./assets/images/react.svg" />
+              </div>
+            </div>
+            <div id="markUp">
+              <img
+                id="html"
+                src="./assets/images/htmlBackground.jpeg"
+                loading="lazy"
+                class="notVector"
+              />
+              <p id="petite-vue">Petite Vue</p>
+            </div>
+            <div id="styling">
+              <div id="taiWind">
+                <img src="./assets/images/tailWind.svg" loading="lazy" />
+              </div>
+              <div id="sass">
+                <img src="./assets/images/sass.svg" loading="lazy" />
+              </div>
+              <div id="css">
+                <img
+                  src="./assets/images/cssBackground.jpeg"
+                  class="notVector"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+          <div id="midleEnd">
+            <div id="rest">
+              <img
+                src="./assets/images/rest.png"
+                class="notVector"
+                loading="lazy"
+                alt=""
+              />
+            </div>
+            <div id="graphQl">
+              <img src="./assets/images/graphQl.svg" loading="lazy" />
+            </div>
+            <div id="websockets">
+              <img src="./assets/images/webSockets.svg" loading="lazy" />
+            </div>
+            <div id="webRc">
+              <img src="./assets/images/webrtc.svg" loading="lazy" />
+            </div>
+          </div>
+          <div id="backEnd">
+            <div id="javascript">
+              <div id="node">
+                <img src="./assets/images/node.svg" loading="lazy" />
+              </div>
+              <div id="express">
+                <img
+                  src="./assets//images/express.png"
+                  class="notVector"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+            <div id="python">
+              <div id="pythonLanguage">
+                <img src="./assets//images/python.svg" loading="lazy" />
+              </div>
+              <div id="flask">
+                <img
+                  src="./assets/images/flask.png"
+                  class="notVector"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+            <div id="lowLevel">
+              <div id="c">
+                <img
+                  src="./assets/images/c.jpeg"
+                  class="notVector"
+                  loading="lazy"
+                />
+              </div>
+              <div id="cpp">
+                <img src="./assets/images/cpp.svg" loading="lazy" />
+              </div>
+            </div>
+          </div>
+          <div id="hostingEnd">
+            <div id="docker">
+              <img src="./assets/images/docker.svg" loading="lazy" />
+            </div>
+            <div id="ngnix">
+              <img src="./assets/images/ngnix.svg" loading="lazy" />
+            </div>
+            <div id="aws">
+              <img src="./assets/images/aws.svg" loading="lazy" />
+              <!-- <div id="sThree"></div>
+              <div id="route53"></div>
+              <div id="ecTwo"></div> -->
+            </div>
+          </div>
+          <div id="processes">
+            <div id="devOps">
+              <img
+                src="./assets/images/devops.jpeg"
+                class="notVector"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div id="scrum">
+              <img
+                src="./assets/images/scrum.jpeg"
+                class="notVector"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div id="dynamicProgramming">
+              <img
+                class="notVector"
+                src="./assets/images/dynamicProgramming.jpeg"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div id="DataStructures">
+              <img
+                class="notVector"
+                src="./assets/images/dataStructures.jpeg"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div id="algorithms">
+              <img
+                class="notVector"
+                src="./assets/images/algorithms.jpeg"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div id="systemDesign">
+              <img
+                class="notVector"
+                src="./assets/images/systemDesign.jpeg"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div id="softwareDesign">
+              <img
+                src="./assets/images/designprinciples.png"
+                alt=""
+                loading="lazy"
+                class="notVector"
+              />
+            </div>
+          </div>
+          <div id="dataStorage">
+            <div id="yesSql">
+              <div id="sql"></div>
+              <div id="pgSql"></div>
+            </div>
+            <div id="noSql">
+              <div id="mongoDb"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="experience-section"
+        v-effect="setPageActive($el,'experience',scroll)"
+      ></section>
+
+      <section
+        id="education-section"
+        v-effect="setPageActive($el,'education',scroll)"
+      ></section>
+
+      <section
+        id="contact-section"
+        v-effect="setPageActive($el,'contact',scroll)"
+      ></section>
     </div>
 
-    <script type="module" src="./app.js" type="module"></script>
+    <script type="module" src="dist\main.js" type="module"></script>
   </body>
 </html>

@@ -1,0 +1,258 @@
+.skills-page-grid & div{
+  width: fit-content;
+  height: fit-content;
+}
+
+.skills-page-grid {
+  display: grid;
+  grid-template-areas:
+    "frontend frontend midleend"
+    "backend hostingend  dataStorage"
+    "processes processes processes";
+  gap: 16px;
+}
+
+#frontEnd {
+  display: grid;
+  grid-area: frontend;
+  grid-template-areas: "markUp programming styling";
+  gap: 8px;
+}
+
+#programming {
+  grid-area: programming;
+  display: grid;
+  grid-template-areas:
+    "javascript webPack"
+    "javascript react"
+    "petiteVue react"
+    "petiteVue react";
+  grid-column: 1fr;
+  grid-row: 1fr;
+  gap: 4px;
+}
+
+#styling {
+  grid-area: styling;
+  display: grid;
+  grid-template-areas:
+    "taiWind"
+    "sass"
+    "css";
+  gap: 4px;
+}
+
+#taiWind {
+  grid-area: taiWind;
+}
+
+#sass {
+  grid-area: sass;
+}
+
+#css {
+  grid-area: css;
+  margin: auto;
+  background-color: #ffffff;
+}
+
+#markUp {
+  display: grid;
+  grid-area: markUp;
+  grid-template-areas:
+    "html"
+    "petiteVue";
+  gap: 4px;
+}
+
+#html {
+  grid-area: html;
+}
+
+#petite-vue {
+  grid-area: petiteVue;
+  background: -webkit-linear-gradient(315deg, #42d392 25%, #647eff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#webPack {
+  background-color: #f6f8fa;
+}
+
+#javascript {
+  grid-area: javascript;
+  background-image: url("../assets/images/computer-program-coding-screen.jpg");
+}
+
+#petiteVue {
+  grid-area: petiteVue;
+}
+
+#webPack {
+  grid-area: webPack;
+}
+
+#react {
+  grid-area: react;
+}
+
+#midleEnd {
+  grid-area: midleend;
+  display: grid;
+  grid-template-areas:
+    "rest graphQl"
+    "websockets webRc";
+  gap: 4px;
+}
+
+#rest {
+  grid-area: rest;
+}
+
+#rest > img {
+  width: 200px;
+  height: 200px;
+}
+
+#graphQl {
+  grid-area: graphQl;
+}
+
+#websockets {
+  grid-area: websockets;
+}
+
+#webRc {
+  grid-area: webRc;
+}
+
+#backEnd {
+  grid-area: backend;
+  display: grid;
+  grid-template-areas: "javascript python lowLevel";
+  gap: 8px;
+}
+
+#javascript {
+  display: grid;
+  grid-template-areas:
+    "node"
+    "express";
+  gap: 4px;
+}
+
+#node {
+  grid-area: node;
+}
+
+#express {
+  grid-area: express;
+}
+
+#python {
+  display: grid;
+  grid-template-areas:
+    "pythonLanguage"
+    "flask";
+  gap: 4px;
+}
+
+#pythonLanguage {
+  grid-area: pythonLanguage;
+}
+
+#flask {
+  grid-area: flask;
+}
+
+#lowLevel {
+  display: grid;
+  grid-template-areas:
+    "c"
+    "cpp";
+  gap: 4px;
+}
+
+#c {
+  grid-area: c;
+}
+
+#cpp {
+  grid-area: cpp;
+}
+
+#hostingEnd {
+  grid-area: hostingend;
+}
+
+#dataStorage {
+  grid-area: dataStorage;
+  display: grid;
+  grid-template-areas: "yesSql noSql";
+  gap: 8px;
+}
+
+#yesSql {
+  grid-area: yesSql;
+  display: grid;
+  grid-template-areas:
+    "sql"
+    "pgSql";
+  gap: 4px;
+}
+
+#noSql {
+  grid-area: noSql;
+  gap: 4px;
+}
+
+#sql {
+  grid-area: sql;
+}
+
+#pgSql {
+  grid-area: pgSql;
+}
+
+#processes {
+  grid-area: processes;
+  display: grid;
+  grid-template-areas:
+    "devOps scrum dynamicProgramming DataStructures"
+    "softwareDesign algorithms systemDesign DataStructures";
+  gap: 4px;
+}
+
+#devOps {
+  grid-area: devOps;
+}
+
+#scrum {
+  grid-area: scrum;
+}
+
+#dynamicProgramming {
+  grid-area: dynamicProgramming;
+}
+
+#DataStructures {
+  grid-area: DataStructures;
+}
+
+#algorithms {
+  grid-area: algorithms;
+}
+
+#systemDesign {
+  grid-area: systemDesign;
+}
+
+#devOps {
+  grid-area: devOps;
+}
+
+#softwareDesign {
+  grid-area: softwareDesign;
+}

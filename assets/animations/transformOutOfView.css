@@ -1,0 +1,56 @@
+.transform-Out-Of-View {
+    -webkit-animation: 800ms outOfView cubic-bezier(.2,.99,.35,.92) 1;
+    -moz-animation: 800ms outOfView cubic-bezier(.2,.99,.35,.92) 1;
+    -ms-animation: 800ms outOfView cubic-bezier(.2,.99,.35,.92) 1;
+    -o-animation: 800ms outOfView cubic-bezier(.2,.99,.35,.92) 1;
+    animation: 800ms outOfView cubic-bezier(.2,.99,.35,.92) 1;
+  }
+  
+  /* annimations */
+  @keyframes outOfView {
+    from{
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-100vh);
+    }
+  }
+  
+  @-moz-keyframes outOfView {
+    from{
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-100vh);
+    }
+  }
+  
+  @-webkit-keyframes outOfView {
+    from{
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-100vh);
+    }
+  }
+  
+  @-ms-keyframes outOfView {
+    from{
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-100vh);
+    }
+  }
+  
+  @-o-keyframes outOfView {
+    from{
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-100vh);
+    }
+  }
+
+
+  

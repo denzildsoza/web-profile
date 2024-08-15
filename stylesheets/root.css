@@ -1,11 +1,12 @@
 * {
-
   /* --themePrimary:#A7A2A9; */
-  --themePrimary:#A1A6B4;
-  --contentPrimary:#F4F7F5;
-  --backgroundPrimary:#08090A;
+  --themePrimary: #a1a6b4;
+  --contentPrimary: #f4f7f5;
+  --backgroundPrimary: #000000;
+  --maxWidth: 926px;
+  --navBarHeight: fit-content;
 
-  --navBarHeight:78px;
+  --contentSecendary: #000000;
 
   margin: 0;
   padding: 0;
@@ -17,12 +18,23 @@ body {
   margin: 0;
   padding: 0;
   position: relative;
+  display: none;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 
 #wrapper-main {
   width: 100%;
   height: 100%;
   overflow-y: auto;
+}
+
+.displayblock {
+  display: block;
+}
+
+img {
+  height: 15rem;
+  width: 15rem;
 }
