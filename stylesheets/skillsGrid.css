@@ -1,4 +1,4 @@
-.skills-page-grid & div{
+.skills-page-grid & div {
   width: fit-content;
   height: fit-content;
 }
@@ -6,16 +6,20 @@
 .skills-page-grid {
   display: grid;
   grid-template-areas:
-    "frontend frontend midleend"
-    "backend hostingend  dataStorage"
-    "processes processes processes";
+    "frontend frontend frontend midleend"
+    "backend backend hostingend  dataStorage"
+    "processes processes processes  processes";
+  /* grid-template-rows: auto; */
   gap: 16px;
+  backdrop-filter: blur(50px);
+  background-color: transparent;
 }
 
 #frontEnd {
   display: grid;
   grid-area: frontend;
   grid-template-areas: "markUp programming styling";
+  grid-template-columns: 3fr 6fr 2fr;
   gap: 8px;
 }
 
@@ -104,6 +108,7 @@
   grid-template-areas:
     "rest graphQl"
     "websockets webRc";
+  grid-template-columns: 1fr 1fr;
   gap: 4px;
 }
 
@@ -131,11 +136,13 @@
 #backEnd {
   grid-area: backend;
   display: grid;
-  grid-template-areas: "javascript python lowLevel";
+  grid-template-areas: "javascriptBackend python lowLevel";
+  grid-template-columns: repeat(1fr, 3);
   gap: 8px;
 }
 
-#javascript {
+#javascript-backend {
+  grid-area: javascriptBackend;
   display: grid;
   grid-template-areas:
     "node"
@@ -255,4 +262,21 @@
 
 #softwareDesign {
   grid-area: softwareDesign;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.zoom {
+  box-shadow: 0px 6px 6px -3px rgba(0, 0, 0, 0.2),
+  0px 10px 14px 1px rgba(0, 0, 0, 0.14), 0px 4px 18px 3px rgba(0, 0, 0, 0.12);
+  transition: transform 0.4s;
+}
+
+.zoom:hover {
+  transform: scale(
+    1.05
+  );
 }
