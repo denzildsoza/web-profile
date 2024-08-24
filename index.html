@@ -39,7 +39,10 @@
       </div> -->
     <!-- </div> -->
     <div id="wrapper-main" @scroll="onScrollChange($el)">
-      <div id="nav-bar-wrapper">
+      <div
+        id="nav-bar-wrapper"
+        @vue:mounted="scrollIntoView($el,'skills-section')"
+      >
         <!-- <div>
           <p id="home-nav-content" class="poppins-bold">Denzil Dsouza</p>
         </div> -->
@@ -138,8 +141,8 @@
               <div id="javascript" class="zoom">
                 <img src="./assets/images/javascript.svg" loading="lazy" />
               </div>
-              <div id="petiteVue" class="zoom">
-                <img src="./assets/images/petiteVue.svg" loading="lazy" />
+              <div id="react-redux" class="zoom bg-white">
+                <img src="./assets/images/redux.svg" loading="lazy" />
               </div>
               <div id="webPack" class="zoom">
                 <img
@@ -148,7 +151,11 @@
                   class="zoom"
                 />
               </div>
-              <div id="react" class="flex-center flex-column" class="zoom">
+              <div
+                id="react"
+                class="flex-center flex-column bg-black"
+                class="zoom"
+              >
                 <img
                   src="./assets/images/react.svg"
                   class="zoom"
@@ -165,17 +172,21 @@
                 />
               </div>
               <div id="petite-vue" class="zoom">
-                <p >Petite Vue</p>
+                <img
+                  src="./assets/images/vue.svg"
+                  loading="lazy"
+                  class="notVector"
+                />
               </div>
             </div>
             <div id="styling">
-              <div id="taiWind" class="zoom">
+              <div id="taiWind" class="zoom bg-white pd-28px">
                 <img src="./assets/images/tailWind.svg" loading="lazy" />
               </div>
-              <div id="sass" class="zoom">
+              <div id="sass" class="zoom bg-grey pd-28px">
                 <img src="./assets/images/sass.svg" loading="lazy" />
               </div>
-              <div id="css" class="zoom">
+              <div id="css" class="zoom pd-8px">
                 <img
                   src="./assets/images/cssBackground.jpeg"
                   class="notVector"
@@ -193,32 +204,39 @@
                 alt=""
               />
             </div>
-            <div id="graphQl" class="zoom">
+            <div id="graphQl" class="zoom bg-white pd-inline-16px">
               <img src="./assets/images/graphQl.svg" loading="lazy" />
             </div>
-            <div id="websockets" class="zoom">
+            <div id="websockets" class="zoom bg-white pd-16px">
               <img src="./assets/images/webSockets.svg" loading="lazy" />
             </div>
-            <div id="webRc" class="zoom">
+            <div id="webRc" class="zoom bg-white pd-16px">
               <img src="./assets/images/webrtc.svg" loading="lazy" />
+            </div>
+            <div id="j-w-t" class="zoom bg-black">
+              <img src="./assets/images/jwt.svg" loading="lazy" />
             </div>
           </div>
           <div id="backEnd">
             <div id="javascript-backend">
-              <div id="node" class="zoom">
+              <div id="node" class="zoom pd-32px bg-black">
                 <img src="./assets/images/node.svg" loading="lazy" />
               </div>
-              <div id="express" class="zoom">
+              <div
+                id="express"
+                class="zoom pd-16px"
+                style="background-color: #ffffff;"
+              >
                 <img
-                  src="./assets//images/express.png"
+                  src="./assets/images/express.png"
                   class="notVector"
                   loading="lazy"
                 />
               </div>
             </div>
             <div id="python">
-              <div id="pythonLanguage" class="zoom">
-                <img src="./assets//images/python.svg" loading="lazy" />
+              <div id="pythonLanguage" class="zoom pd-16px">
+                <img src="./assets/images/python.svg" loading="lazy" />
               </div>
               <div id="flask" class="zoom">
                 <img
@@ -229,14 +247,14 @@
               </div>
             </div>
             <div id="lowLevel">
-              <div id="c" class="zoom">
+              <div id="c" class="zoom pd-16px">
                 <img
                   src="./assets/images/c.jpeg"
                   class="notVector"
                   loading="lazy"
                 />
               </div>
-              <div id="cpp" class="zoom">
+              <div id="cpp" class="zoom bg-white pd-16px">
                 <img src="./assets/images/cpp.svg" loading="lazy" />
               </div>
             </div>
@@ -245,10 +263,10 @@
             <div id="docker" class="zoom">
               <img src="./assets/images/docker.svg" loading="lazy" />
             </div>
-            <div id="ngnix" class="zoom">
+            <div id="ngnix" class="zoom bg-black pd-inline-16px pd-block-16px">
               <img src="./assets/images/ngnix.svg" loading="lazy" />
             </div>
-            <div id="aws" class="zoom">
+            <div id="aws" class="zoom pd-28px">
               <img src="./assets/images/aws.svg" loading="lazy" />
               <!-- <div id="sThree"></div>
               <div id="route53"></div>
@@ -315,11 +333,17 @@
           </div>
           <div id="dataStorage">
             <div id="yesSql">
-              <div id="sql" class="zoom"></div>
-              <div id="pgSql" class="zoom"></div>
+              <div id="sql" class="zoom pd-16px">
+                <img src="./assets/images/mysql.svg" loading="lazy" />
+              </div>
+              <div id="pgSql" class="zoom pd-32px">
+                <img src="./assets/images/postgresql.svg" loading="lazy" />
+              </div>
             </div>
             <div id="noSql">
-              <div id="mongoDb" class="zoom"></div>
+              <div id="mongoDb" class="zoom pd-inline-16px pd-block-16px">
+                <img src="./assets/images/mongodb.svg" loading="lazy" />
+              </div>
             </div>
           </div>
         </div>
