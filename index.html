@@ -29,15 +29,6 @@
   </head>
 
   <body v-scope id="body" :class="{ displayblock: true}">
-    <!-- <div id="welcome-page">
-      <div id="welcome-page-content">
-        <span
-        :mounted="welcomeClient($el,welcomeText,100)"
-        class="welcome-text poppins-bold"
-      ></span>
-      <span id="blinking-cursor" class="welcome-text">|</span>
-      </div> -->
-    <!-- </div> -->
     <div id="wrapper-main" @scroll="onScrollChange($el)">
       <div
         id="nav-bar-wrapper"
@@ -132,217 +123,250 @@
 
       <section
         id="skills-section"
-        class="flex-center"
+        class="flex-center bg-black"
         v-effect="setPageActive($el,'skills',scroll)"
       >
-        <div id="skill-page-content" class="skills-page-grid">
-          <div id="frontEnd">
-            <div id="programming">
-              <div id="javascript" class="zoom">
-                <img src="./assets/images/javascript.svg" loading="lazy" />
-              </div>
-              <div id="react-redux" class="zoom bg-white">
-                <img src="./assets/images/redux.svg" loading="lazy" />
-              </div>
-              <div id="webPack" class="zoom">
-                <img
-                  src="./assets/images/webPack.svg"
-                  loading="lazy"
+        <div id="skill-page-content">
+          <p
+              class="poppins-semibold margin-block-16 headingCharacters100 colorWhite"
+            >
+              Skills
+            </p>
+          <div id="skill-grid-container">
+            <div id="frontEnd">
+              <div id="programming">
+                <div id="javascript" class="zoom">
+                  <img src="./assets/images/javascript.svg" loading="lazy" />
+                </div>
+                <div id="react-redux" class="zoom bg-white pd-20per">
+                  <img src="./assets/images/redux.svg" loading="lazy" />
+                </div>
+                <div id="webPack" class="zoom">
+                  <img
+                    src="./assets/images/webPack.svg"
+                    loading="lazy"
+                    class="zoom"
+                  />
+                </div>
+                <div
+                  id="react"
+                  class="flex-center flex-column bg-black pd-10per"
                   class="zoom"
+                >
+                  <img
+                    src="./assets/images/react.svg"
+                    class="zoom"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <div id="markUp">
+                <div id="html" class="zoom">
+                  <img
+                    src="./assets/images/htmlBackground.jpeg"
+                    loading="lazy"
+                    class="notVector"
+                  />
+                </div>
+                <div id="petite-vue" class="zoom pd-10per">
+                  <img
+                    src="./assets/images/vue.svg"
+                    loading="lazy"
+                    class="notVector"
+                  />
+                </div>
+              </div>
+              <div id="styling">
+                <div id="taiWind" class="zoom bg-white pd-20per">
+                  <img src="./assets/images/tailWind.svg" loading="lazy" />
+                </div>
+                <div id="sass" class="zoom bg-grey pd-20per">
+                  <img src="./assets/images/sass.svg" loading="lazy" />
+                </div>
+                <div id="css" class="zoom pd-10per">
+                  <img
+                    src="./assets/images/cssBackground.jpeg"
+                    class="notVector"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+            <div id="midleEnd">
+              <div id="rest" class="zoom bg-white pd-20per">
+                <img
+                  src="./assets/images/rest.svg"
+                  class="notVector"
+                  loading="lazy"
+                  alt=""
                 />
+              </div>
+              <div id="graphQl" class="zoom bg-black pd-inline-20per">
+                <img src="./assets/images/graphQl.svg" loading="lazy" />
+              </div>
+              <div id="websockets" class="zoom pd-20per">
+                <img src="./assets/images/webSockets.svg" loading="lazy" />
+              </div>
+              <div id="webRc" class="zoom bg-white pd-20per">
+                <img src="./assets/images/webrtc.svg" loading="lazy" />
+              </div>
+              <div id="j-w-t" class="zoom bg-black">
+                <img src="./assets/images/jwt.svg" loading="lazy" />
+              </div>
+            </div>
+            <div id="backEnd">
+              <div id="javascript-backend">
+                <div id="node" class="zoom pd-20per bg-black">
+                  <img src="./assets/images/node.svg" loading="lazy" />
+                </div>
+                <div
+                  id="express"
+                  class="zoom pd-16px"
+                  style="background-color: #ffffff;"
+                >
+                  <img
+                    src="./assets/images/express.png"
+                    class="notVector"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <div id="python">
+                <div id="pythonLanguage" class="zoom pd-20per">
+                  <img src="./assets/images/python.svg" loading="lazy" />
+                </div>
+                <div id="microservices" class="zoom pd-10per bg-white">
+                  <img
+                    src="./assets/images/microservices.jpeg"
+                    loading="lazy"
+                  />
+                </div>
+                <div id="flask" class="zoom">
+                  <img
+                    src="./assets/images/flask.png"
+                    class="notVector"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <div id="lowLevel">
+                <div id="c" class="zoom pd-16px">
+                  <img
+                    src="./assets/images/c.jpeg"
+                    class="notVector"
+                    loading="lazy"
+                  />
+                </div>
+                <div id="orm" class="zoom pd-16px">
+                  <img
+                    src="./assets/images/ORM.png"
+                    class="notVector"
+                    loading="lazy"
+                  />
+                </div>
+                <div id="cpp" class="zoom bg-white pd-16px">
+                  <img src="./assets/images/cpp.svg" loading="lazy" />
+                </div>
+              </div>
+            </div>
+            <div id="hostingEnd">
+              <div id="docker" class="zoom">
+                <img src="./assets/images/docker.svg" loading="lazy" />
               </div>
               <div
-                id="react"
-                class="flex-center flex-column bg-black"
-                class="zoom"
+                id="ngnix"
+                class="zoom bg-black pd-inline-16px pd-block-16px"
               >
-                <img
-                  src="./assets/images/react.svg"
-                  class="zoom"
-                  loading="lazy"
-                />
+                <img src="./assets/images/ngnix.svg" loading="lazy" />
+              </div>
+              <div id="aws" class="zoom pd-28px">
+                <img src="./assets/images/aws.svg" loading="lazy" />
+                <!-- <div id="sThree"></div>
+                <div id="route53"></div>
+                <div id="ecTwo"></div> -->
               </div>
             </div>
-            <div id="markUp">
-              <div id="html" class="zoom">
+            <div id="processes" class="poppins-bold">
+              <div id="devOps" class="zoom boxShadow">
                 <img
-                  src="./assets/images/htmlBackground.jpeg"
+                  src="./assets/images/devops.jpeg"
+                  class="notVector"
+                  alt=""
+                  loading="lazy"
+                />
+                <p class="">Development Operations</p>
+              </div>
+              <div id="scrum" class="zoom boxShadow">
+                <img
+                  src="./assets/images/scrum.jpeg"
+                  class="notVector"
+                  alt=""
+                  loading="lazy"
+                />
+                <p>Scrum</p>
+              </div>
+              <div id="dynamicProgramming" class="zoom boxShadow">
+                <img
+                  class="notVector"
+                  src="./assets/images/dynamicProgramming.jpeg"
+                  alt=""
+                  loading="lazy"
+                />
+                <p>Dynamic Programming</p>
+              </div>
+              <div id="DataStructures" class="zoom boxShadow">
+                <img
+                  class="notVector"
+                  src="./assets/images/dataStructures.jpeg"
+                  alt=""
+                  loading="lazy"
+                />
+                <p>Data Structures</p>
+              </div>
+              <div id="softwareDesign" class="zoom boxShadow">
+                <img
+                  src="./assets/images/designprinciples.png"
+                  alt=""
                   loading="lazy"
                   class="notVector"
                 />
+                <p>Software Design Principles</p>
               </div>
-              <div id="petite-vue" class="zoom">
+              <div id="algorithms" class="zoom boxShadow">
                 <img
-                  src="./assets/images/vue.svg"
-                  loading="lazy"
                   class="notVector"
-                />
-              </div>
-            </div>
-            <div id="styling">
-              <div id="taiWind" class="zoom bg-white pd-28px">
-                <img src="./assets/images/tailWind.svg" loading="lazy" />
-              </div>
-              <div id="sass" class="zoom bg-grey pd-28px">
-                <img src="./assets/images/sass.svg" loading="lazy" />
-              </div>
-              <div id="css" class="zoom pd-8px">
-                <img
-                  src="./assets/images/cssBackground.jpeg"
-                  class="notVector"
+                  src="./assets/images/algorithms.jpeg"
+                  alt=""
                   loading="lazy"
                 />
+                <p>Algorithms</p>
               </div>
-            </div>
-          </div>
-          <div id="midleEnd">
-            <div id="rest" class="zoom">
-              <img
-                src="./assets/images/rest.png"
-                class="notVector"
-                loading="lazy"
-                alt=""
-              />
-            </div>
-            <div id="graphQl" class="zoom bg-white pd-inline-16px">
-              <img src="./assets/images/graphQl.svg" loading="lazy" />
-            </div>
-            <div id="websockets" class="zoom bg-white pd-16px">
-              <img src="./assets/images/webSockets.svg" loading="lazy" />
-            </div>
-            <div id="webRc" class="zoom bg-white pd-16px">
-              <img src="./assets/images/webrtc.svg" loading="lazy" />
-            </div>
-            <div id="j-w-t" class="zoom bg-black">
-              <img src="./assets/images/jwt.svg" loading="lazy" />
-            </div>
-          </div>
-          <div id="backEnd">
-            <div id="javascript-backend">
-              <div id="node" class="zoom pd-32px bg-black">
-                <img src="./assets/images/node.svg" loading="lazy" />
-              </div>
-              <div
-                id="express"
-                class="zoom pd-16px"
-                style="background-color: #ffffff;"
-              >
+              <div id="systemDesign" class="zoom boxShadow">
                 <img
-                  src="./assets/images/express.png"
                   class="notVector"
+                  src="./assets/images/systemDesign.jpeg"
+                  alt=""
                   loading="lazy"
                 />
+                <p>System Design</p>
               </div>
             </div>
-            <div id="python">
-              <div id="pythonLanguage" class="zoom pd-16px">
-                <img src="./assets/images/python.svg" loading="lazy" />
+            <div id="dataStorage">
+              <div id="yesSql">
+                <div id="sql" class="zoom pd-20per">
+                  <img src="./assets/images/mysql.svg" loading="lazy" />
+                </div>
+                <div id="pgSql" class="zoom pd-20per">
+                  <img src="./assets/images/postgresql.svg" loading="lazy" />
+                </div>
               </div>
-              <div id="flask" class="zoom">
-                <img
-                  src="./assets/images/flask.png"
-                  class="notVector"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-            <div id="lowLevel">
-              <div id="c" class="zoom pd-16px">
-                <img
-                  src="./assets/images/c.jpeg"
-                  class="notVector"
-                  loading="lazy"
-                />
-              </div>
-              <div id="cpp" class="zoom bg-white pd-16px">
-                <img src="./assets/images/cpp.svg" loading="lazy" />
-              </div>
-            </div>
-          </div>
-          <div id="hostingEnd">
-            <div id="docker" class="zoom">
-              <img src="./assets/images/docker.svg" loading="lazy" />
-            </div>
-            <div id="ngnix" class="zoom bg-black pd-inline-16px pd-block-16px">
-              <img src="./assets/images/ngnix.svg" loading="lazy" />
-            </div>
-            <div id="aws" class="zoom pd-28px">
-              <img src="./assets/images/aws.svg" loading="lazy" />
-              <!-- <div id="sThree"></div>
-              <div id="route53"></div>
-              <div id="ecTwo"></div> -->
-            </div>
-          </div>
-          <div id="processes">
-            <div id="devOps" class="zoom">
-              <img
-                src="./assets/images/devops.jpeg"
-                class="notVector"
-                alt=""
-                loading="lazy"
-              />
-            </div>
-            <div id="scrum" class="zoom">
-              <img
-                src="./assets/images/scrum.jpeg"
-                class="notVector"
-                alt=""
-                loading="lazy"
-              />
-            </div>
-            <div id="dynamicProgramming" class="zoom">
-              <img
-                class="notVector"
-                src="./assets/images/dynamicProgramming.jpeg"
-                alt=""
-                loading="lazy"
-              />
-            </div>
-            <div id="DataStructures" class="zoom">
-              <img
-                class="notVector"
-                src="./assets/images/dataStructures.jpeg"
-                alt=""
-                loading="lazy"
-              />
-            </div>
-            <div id="algorithms" class="zoom">
-              <img
-                class="notVector"
-                src="./assets/images/algorithms.jpeg"
-                alt=""
-                loading="lazy"
-              />
-            </div>
-            <div id="systemDesign" class="zoom">
-              <img
-                class="notVector"
-                src="./assets/images/systemDesign.jpeg"
-                alt=""
-                loading="lazy"
-              />
-            </div>
-            <div id="softwareDesign" class="zoom">
-              <img
-                src="./assets/images/designprinciples.png"
-                alt=""
-                loading="lazy"
-                class="notVector"
-              />
-            </div>
-          </div>
-          <div id="dataStorage">
-            <div id="yesSql">
-              <div id="sql" class="zoom pd-16px">
-                <img src="./assets/images/mysql.svg" loading="lazy" />
-              </div>
-              <div id="pgSql" class="zoom pd-32px">
-                <img src="./assets/images/postgresql.svg" loading="lazy" />
-              </div>
-            </div>
-            <div id="noSql">
-              <div id="mongoDb" class="zoom pd-inline-16px pd-block-16px">
-                <img src="./assets/images/mongodb.svg" loading="lazy" />
+              <div id="noSql">
+                <div
+                  id="mongoDb"
+                  class="zoom pd-inline-16px pd-block-16px bg-white"
+                >
+                  <img src="./assets/images/mongodb.svg" loading="lazy" />
+                </div>
               </div>
             </div>
           </div>
@@ -355,15 +379,9 @@
       ></section>
 
       <section
-        id="education-section"
-        v-effect="setPageActive($el,'education',scroll)"
-      ></section>
-
-      <section
         id="contact-section"
         v-effect="setPageActive($el,'contact',scroll)"
       ></section>
-    </div>
 
     <script type="module" src="dist\main.js" type="module"></script>
   </body>

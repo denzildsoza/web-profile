@@ -1,49 +1,45 @@
-.skills-page-grid & div {
-  width: fit-content;
-  height: fit-content;
-}
-
-.skills-page-grid {
+#skill-grid-container {
+  width: 100%;
+  height: 100%;
+  margin-top: 1.8rem;
+  background: black;
   display: grid;
+  grid-template-columns: repeat(10, 1fr);
   grid-template-areas:
-    "frontend frontend frontend midleend"
-    "backend backend hostingend  dataStorage"
-    "processes processes processes  processes";
-  /* grid-template-rows: auto; */
-  gap: 32px;
-  backdrop-filter: blur(50px);
-  background-color: transparent;
+    "frontend frontend frontend frontend frontend frontend frontend midleend midleend midleend"
+    "backend backend backend backend backend backend hostingend hostingend  dataStorage dataStorage"
+    "processes processes processes  processes  processes  processes  processes  processes  processes  processes";
+  grid-template-rows: auto auto auto;
+  /* backdrop-filter: blur(50px); */
+  /* background-color: transparent; */
 }
 
 #frontEnd {
   display: grid;
   grid-area: frontend;
-  grid-template-areas: "markUp programming styling styling";
-  grid-template-columns: 3fr 6fr 2fr;
-  gap: 8px;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-areas: "markUp markUp programming programming programming programming styling styling";
+  grid-template-rows: auto;
 }
 
 #programming {
   grid-area: programming;
   display: grid;
+  grid-template-rows: repeat(3, 1fr);
   grid-template-areas:
     "javascript webPack"
-    "javascript react"
     "reactRedux react"
     "reactRedux react";
-  grid-column: 1fr;
-  grid-row: 1fr;
-  gap: 4px;
 }
 
 #styling {
   grid-area: styling;
   display: grid;
+  grid-template-rows: repeat(3, 1fr);
   grid-template-areas:
     "taiWind"
     "sass"
     "css";
-  gap: 4px;
 }
 
 #taiWind {
@@ -62,10 +58,11 @@
 #markUp {
   display: grid;
   grid-area: markUp;
+  grid-template-rows: repeat(3, 1fr);
   grid-template-areas:
     "html"
+    "petiteVue"
     "petiteVue";
-  gap: 4px;
 }
 
 #html {
@@ -86,7 +83,7 @@
 
 #javascript {
   grid-area: javascript;
-  background-image: url("../assets/images/computer-program-coding-screen.jpg");
+  background-color: #f0d91f;
 }
 
 #react-redux {
@@ -104,12 +101,12 @@
 #midleEnd {
   grid-area: midleend;
   display: grid;
+  grid-template-rows: repeat(3, 1fr);
   grid-template-areas:
     "rest jwt"
     "websockets webRc"
     "graphQl graphQl";
   grid-template-columns: 1fr 1fr;
-  gap: 4px;
 }
 
 #rest {
@@ -122,6 +119,7 @@
 
 #websockets {
   grid-area: websockets;
+  background-color: aliceblue;
 }
 
 #webRc {
@@ -135,19 +133,17 @@
 #backEnd {
   grid-area: backend;
   display: grid;
+  grid-template-columns: repeat(3, 1fr);
   grid-template-areas: "javascriptBackend python lowLevel";
-  grid-template-columns: repeat(1fr, 3);
-  gap: 8px;
 }
 
 #javascript-backend {
   grid-area: javascriptBackend;
   display: grid;
+  grid-template-rows: repeat(2, 1fr);
   grid-template-areas:
     "node"
     "express";
-  /* grid-template-rows: repeat(2, 160px); */
-  gap: 4px;
 }
 
 #node {
@@ -157,19 +153,24 @@
 #express {
   grid-area: express;
   color: #002233;
+  padding: 45% 10%;
 }
 
 #python {
   display: grid;
+  grid-template-rows: repeat(3, 1fr);
   grid-template-areas:
     "pythonLanguage"
+    "microServices"
     "flask";
-  /* grid-template-rows: repeat(2, 160px); */
-  gap: 4px;
 }
 
 #pythonLanguage {
   grid-area: pythonLanguage;
+}
+
+#microservices {
+  grid-area: microServices;
 }
 
 #flask {
@@ -178,16 +179,21 @@
 
 #lowLevel {
   display: grid;
+  grid-template-rows: repeat(3, 1fr);
   grid-template-areas:
     "c"
+    "Orm"
     "cpp";
-  /* grid-template-rows: repeat(2, 160px); */
-  gap: 4px;
 }
 
 #c {
   grid-area: c;
-  background-color: #0C0E34;
+  background-color: #0c0e34;
+}
+
+#orm {
+  grid-area: Orm;
+  background-color: #f4f8fe;
 }
 
 #cpp {
@@ -197,7 +203,7 @@
 #hostingEnd {
   grid-area: hostingend;
   display: grid;
-  /* grid-template-rows: repeat(3, 160px); */
+  grid-template-rows: repeat(3, 1fr);
   grid-template-areas:
     "docker"
     "ngnix"
@@ -215,16 +221,17 @@
 
 #aws {
   grid-area: aws;
-  background-color: #141F2E;
+  background-color: #141f2e;
 }
 
 #dataStorage {
   grid-area: dataStorage;
   display: grid;
+  grid-template-rows: repeat(3, 1fr);
   grid-template-areas:
     "yesSql"
+    "yesSql"
     "noSql";
-  gap: 8px;
 }
 
 #yesSql {
@@ -233,15 +240,12 @@
   grid-template-areas:
     "sql"
     "pgSql";
-  gap: 4px;
 }
 
 #noSql {
   grid-area: noSql;
   display: grid;
-  grid-template-areas:
-    "mongoDb";
-  gap: 4px;
+  grid-template-areas: "mongoDb";
 }
 
 #sql {
@@ -254,18 +258,35 @@
   background-color: aliceblue;
 }
 
-#mongoDb{
+#mongoDb {
   grid-area: mongoDb;
-  background-color: aliceblue;
 }
 
 #processes {
   grid-area: processes;
   display: grid;
+  margin-top: 16px;
+  grid-template-columns: auto-fit;
   grid-template-areas:
     "devOps scrum dynamicProgramming DataStructures"
-    "softwareDesign algorithms systemDesign DataStructures";
-  gap: 4px;
+    "softwareDesign algorithms systemDesign .";
+    gap: 8px;
+}
+
+#processes > div {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 2;
+  border: 1px solid white;
+  border-radius: 4px;
+}
+
+
+#processes  p {
+  color: white;
+  font-size: 2.2rem;
+  padding-block: 2rem;
+  padding-inline: 1rem;
 }
 
 #devOps {
@@ -300,19 +321,14 @@
   grid-area: softwareDesign;
 }
 
-img {
-  width: 100%;
-  height: 100%;
-}
-
-.zoom {
+.boxShadow {
+  padding: 8px;
   box-shadow: 0px 6px 6px -3px rgba(0, 0, 0, 0.2),
     0px 10px 14px 1px rgba(0, 0, 0, 0.14), 0px 4px 18px 3px rgba(0, 0, 0, 0.12);
-  transition: transform 0.4s;
 }
 
-.zoom:hover {
+/* .zoom:hover {
   transform: scale(1.05);
 }
 
-
+ */

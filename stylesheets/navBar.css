@@ -42,11 +42,6 @@
   opacity: 1;
 }
 
-/* @media (hover: hover) {
-  #nav-bar-content > p:hover {
-    opacity: 1;
-  }
-} */
 
 @media (hover: none) {
   #nav-bar-content > p:hover {
