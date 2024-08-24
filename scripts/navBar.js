@@ -18,10 +18,6 @@ const navBar = {
       name: "experience",
     },
     {
-      id: "education-section",
-      name: "education",
-    },
-    {
       id: "contact-section",
       name: "contact",
     },
