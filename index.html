@@ -32,7 +32,7 @@
     <div id="wrapper-main" @scroll="onScrollChange($el)">
       <div
         id="nav-bar-wrapper"
-        @vue:mounted="scrollIntoView($el,'skills-section')"
+        @vue:mounted="scrollIntoView($el,'contact-section')"
       >
         <!-- <div>
           <p id="home-nav-content" class="poppins-bold">Denzil Dsouza</p>
@@ -128,10 +128,10 @@
       >
         <div id="skill-page-content">
           <p
-              class="poppins-semibold margin-block-16 headingCharacters100 colorWhite"
-            >
-              Skills
-            </p>
+            class="poppins-semibold margin-block-16 headingCharacters100 colorWhite"
+          >
+            Skills
+          </p>
           <div id="skill-grid-container">
             <div id="frontEnd">
               <div id="programming">
@@ -376,13 +376,87 @@
       <section
         id="experience-section"
         v-effect="setPageActive($el,'experience',scroll)"
-      ></section>
+      >
+        <div id="experience-content">
+          <p
+            class="poppins-semibold margin-block-16 headingCharacters100 colorBlack"
+          >
+            Experience
+          </p>
+          <div class="experienceCard">
+            <ul>
+              <li class="poppins-regular textCharacters100">
+                Spearheaded the development of a service to convert HTML to BITS
+                XML with a team of two, utilizing dynamic programming to reduce
+                code by up to 40% and enhance performance by 22% from the past
+                versions.
+              </li>
+              <li class="poppins-regular textCharacters100">
+                Advocated for the adoption of microservices architecture to
+                maximize resource utilization and enhance overall system
+                efficiency.
+              </li>
+              <li class="poppins-regular textCharacters100">
+                Facilitated the use of SQL transactions, reducing conflict rates
+                and enhancing overall consistancy of the database.
+              </li>
+              <li class="poppins-regular textCharacters100">
+                Implemented code splitting in React components, resulting in a
+                20% reduction in loading times.
+              </li>
+            </ul>
+          </div>
+          <div class="experienceCard">
+            <ul>
+              <li class="poppins-regular textCharacters100">
+                Conducted in-depth research and optimized the app bundling and
+                publishing process across multiple platforms, boosting
+                productivity by up to 10%.
+              </li>
+              <li class="poppins-regular textCharacters100">
+                Promoted better component lifecycle practices, reducing
+                unnecessary API calls and boosting overall application
+                performance by 14%.
+              </li>
+            </ul>
+          </div>
+          <div class="experienceCard">
+            <ul>
+              <li class="poppins-regular textCharacters100">
+                Implemented custom hooks to streamline complex component logic,
+                achieving a measurable 2% increase in code reusability and
+                significantly enhancing overall development efficiency within
+                just two months of employment.
+              </li>
+              <li class="poppins-regular textCharacters100">
+                Integrated Azure IoT with a React Native application using
+                native bridging, ensuring seamless communication between
+                connected devices and the mobile platform while leveraging
+                native performance.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
       <section
         id="contact-section"
         v-effect="setPageActive($el,'contact',scroll)"
-      ></section>
-
+      >
+        <div id="contact-section-content">
+          <div id="contact-content">
+              <label for="firstname" class="poppins-regular">First name</label>
+              <input type="text" name="firstname" /><br />
+              <label for="lastname" class="poppins-regular">Last name</label>
+              <input type="text" name="lastname" /><br />
+              <input type="submit" />
+          </div>
+          <div id="contacts-content">
+            <img src="./assets/images/contactMe.jpeg" />
+          </div>
+        </div>
+      </section>
+    </div>
     <script type="module" src="dist\main.js" type="module"></script>
   </body>
 </html>

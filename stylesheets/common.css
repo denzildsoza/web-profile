@@ -33,7 +33,7 @@
   margin-bottom: 8px;
 }
 
-.margin-block-16{
+.margin-block-16 {
   margin-block: 16px;
 }
 
@@ -65,8 +65,12 @@
   text-align: justify;
 }
 
-.colorWhite{
+.colorWhite {
   color: white;
+}
+
+.colorBlack {
+  color: black;
 }
 
 .bg-white {
@@ -82,7 +86,7 @@
 }
 
 .pd-10per {
-  padding:10%;
+  padding: 10%;
 }
 
 .pd-15per {
@@ -90,19 +94,19 @@
 }
 
 .pd-20per {
-  padding:  20%;
+  padding: 20%;
 }
 
-.pd-30per{
-  padding:30%;
+.pd-30per {
+  padding: 30%;
 }
 
 .pd-inline-16px {
-  padding-inline:  1.6rem;
+  padding-inline: 1.6rem;
 }
 
 .pd-block-16px {
-  padding-block:  1.6rem;
+  padding-block: 1.6rem;
 }
 
 .flex-column {

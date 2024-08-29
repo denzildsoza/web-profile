@@ -43,11 +43,11 @@
 }
 
 
-@media (hover: none) {
+/* @media (hover: none) { */
   #nav-bar-content > p:hover {
     opacity:1;
   }
-}
+/* } */
 
 #home-nav-content {
   font-size: 4rem;
