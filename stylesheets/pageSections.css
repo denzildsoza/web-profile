@@ -7,7 +7,6 @@
   color: var(--contentPrimary);
   margin: 0px;
   font-size: 4rem;
-  width: 100%;
   height: 100%;
   max-width: var(--maxWidth);
 
@@ -29,8 +28,6 @@
 
 #about-section {
   height: 100%;
-  width: 100%;
-  border-bottom: 1px solid black;
   min-height: 100%;
   height: fit-content;
 }
@@ -39,7 +36,6 @@
   color: var(--contentPrimary);
   margin: 0px;
   font-size: 4rem;
-  width: 100%;
   height: 100%;
   max-width: var(--maxWidth);
   gap: 18px;
@@ -62,8 +58,6 @@
 #skills-section {
   min-height: 100%;
   height: fit-content;
-  width: 100%;
-  border-bottom: 1px solid black;
   padding-block: 26.4px;
   /* background-color: var(--backgroundPrimary); */
   /* background-image: url("../assets/images/backdropImage.jpeg"); */
@@ -72,7 +66,6 @@
 }
 
 #skill-page-content {
-  width: 100%;
   height: fit-content;
   max-width: 1250px;
   min-height: 100%;
@@ -81,19 +74,16 @@
 #experience-section {
   height: fit-content;
   min-height: 100vh;
-  width: 100%;
   background-color: #ffffff;
-  border-bottom: 1px solid black;
 }
 
 #experience-content {
   height: 100%;
-  width: var(--maxWidth);
+  max-width: var(--maxWidth);
   margin-inline: auto;
 }
 
 .experienceCard {
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -109,16 +99,16 @@
 
 #education-section {
   height: 100%;
-  width: 100%;
-  border-bottom: 1px solid black;
 }
 #contact-section {
+  background-color: #e7f0ff;
   min-height: 100vh;
-  border-bottom: 1px solid black;
+  height: fit-content;
 }
 
 #contact-section-content {
-  width: var(--maxWidth);
+  max-width: var(--maxWidth);
+  height: 100vh;
   display: grid;
   margin: auto;
   grid-template-columns: 1fr 1fr;
@@ -126,31 +116,108 @@
   justify-content: center;
 }
 
-#contact-section-content input label{
-  font-size: 2rem;
-
+#get-in-touch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: block;
+  margin: auto;
 }
 
-#contact-content{
+#form-overlay {
+  margin: auto;
+  background-color: #ffffff;
+  border-radius: 16px;
+  height: fit-content;
+  width: fit-content;
+  width: 75%;
+  padding: 3rem;
+  box-shadow: 4px 8px 8px hsl(0deg 0% 0% / 0.38);
+}
+
+#contact-section-content input label {
+  font-size: 2rem;
+}
+
+#contact-content {
   display: flex;
 }
 
-input{
+.text-error {
+  height: 3rem;
+}
+
+.text-error > span {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  padding: 0.6rem 1.5rem;
+  line-height: 1.66;
+  letter-spacing: 0.03333em;
+  text-align: left;
+  margin: 0px 3px 0px;
+  color: rgb(244, 67, 54);
+}
+
+input {
   display: block;
-  width: 100%;
-  padding: .375rem .75rem;
-  font-size: 1rem;
+  padding: 0.6rem 1.5rem;
+  font-size: 1.9rem;
   line-height: 1.5;
   color: #495057;
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid #ced4da;
-  border-radius: .25rem;
-  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  border-radius: 4rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-label{
+button {
+  display: grid;
+  padding: 0.6rem 1.5rem;
+  text-align: center;
+  font-size: 1.9rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  cursor: pointer;
+  background-color: #1264ff;
+  color: #ffffff;
+  border-radius: 4rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+textarea {
+  display: block;
+  padding: 0.6rem 1.5rem;
+  font-size: 1.9rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 2rem;
+  height: 170px;
+  resize: none;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+form {
+  width: 100%;
+}
+
+label {
   display: inline-block;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   font-size: 2rem;
+}
+
+.input-error {
+  border: 2px solid red !important;
+}
+
+.display-grid {
+  display: grid;
 }

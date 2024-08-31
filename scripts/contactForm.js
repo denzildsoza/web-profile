@@ -1,52 +1,32 @@
-import { nextTick } from "https://unpkg.com/petite-vue?module";
-
-function FieldComponent(props) {
-  return {
-    $template: "#field-component-template",
-    field: props.field,
-    get isInvalid() {
-      return props.isInvalid();
-    },
-    get invalidMessage() {
-      return props.invalidMessage();
-    },
-    // methods
-    validate() {
-      nextTick(() => {
-        if (this.isInvalid) props.validate();
-      });
-    },
-  };
-}
-
-const form = {
-  // Data
+const formFields = {
   submitted: false,
   invalids: {},
-  fields: {
-    firstName: {
-      label: "First Name",
+  fields: [
+    {
+      label: "First name",
+      key: "firstName",
       value: "",
       validations: [
         {
-          message: "First Name is a required field",
+          message: "Nice try",
+          test: (value) => value.replace(/ /g, ""),
+        },
+        {
+          message: "First name is a required field",
           test: (value) => value,
         },
       ],
     },
-    firstName: {
-      label: "Last Name",
+    {
+      label: "Last name",
+      key: "lastName",
       value: "",
-      validations: [
-        {
-          message: "Last Name is a required field",
-          test: (value) => value,
-        },
-      ],
+      validations: [],
     },
-    email: {
+    {
       label: "Email",
       value: "",
+      key: "email",
       validations: [
         {
           message: "Must be a valid email address",
@@ -58,37 +38,40 @@ const form = {
         },
       ],
     },
-  },
-
-  // Getters
-  get currentFields() {
-    return this.steps[this.currentStep];
-  },
-
-  // Methods
-
+    {
+        label: "Message",
+        value: "",
+        key: "message",
+        validations: [
+          {
+            message: "Message is required",
+            test: (value) => value,
+          },
+        ],
+      },
+  ],
   get isInvalid() {
     return !!Object.values(this.invalids).filter((key) => key).length;
   },
-  // methods
   validate() {
     this.invalids = {};
     // validates all the fields on the current page
-    this.currentFields.forEach((key) => {
+    this.fields.forEach((key) => {
       this.validateField(key);
     });
   },
   validateField(fieldKey) {
-    this.invalids[fieldKey] = false;
-    const field = this.fields[fieldKey];
+    console.log(fieldKey);
+
+    this.invalids[fieldKey.key] = false;
+    // const field = this.fields[fieldKey];
     // run through each of the fields validation tests
-    field.validations.forEach((validation) => {
-      if (!validation.test(field.value)) {
-        this.invalids[fieldKey] = validation.message;
+    fieldKey.validations.forEach((validation) => {
+      if (!validation.test(fieldKey.value)) {
+        this.invalids[fieldKey.key] = validation.message;
       }
     });
   },
-
   submit() {
     // if form not valid don't submit
     this.validate();
@@ -105,4 +88,4 @@ function validateEmail(email) {
   return re.test(String(email).toLowerCase());
 }
 
-export default { form, FieldComponent };
+export default formFields;

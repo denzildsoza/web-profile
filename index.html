@@ -444,19 +444,83 @@
         v-effect="setPageActive($el,'contact',scroll)"
       >
         <div id="contact-section-content">
-          <div id="contact-content">
-              <label for="firstname" class="poppins-regular">First name</label>
-              <input type="text" name="firstname" /><br />
-              <label for="lastname" class="poppins-regular">Last name</label>
-              <input type="text" name="lastname" /><br />
-              <input type="submit" />
+          <div id="contacts-content" class="flex-center flex-column">
+            <p class="headingCharacters100 poppins-semibold">
+              Contact Me
+            </p>
+            <p class="poppins-regular textCharacters100">
+              Call | Email | Linked In | Form
+            </p>
+            <p class="poppins-regular textCharacters100">+91 8197175105</p>
+            <p>
+              <a
+                class="poppins-regular textCharacters100"
+                target="_blank"
+                href="mailto:denzildsouza3661@gmail.com"
+                >denzildsouza3661@gmail.com</a
+              >
+            </p>
+            <p>
+              <a
+                class="poppins-regular textCharacters100"
+                target="_blank"
+                href="https://www.linkedin.com/in/denzil-dsouza-7774551b2"
+                >Linked In</a
+              >
+            </p>
           </div>
-          <div id="contacts-content">
-            <img src="./assets/images/contactMe.jpeg" />
+          <div id="get-in-touch">
+            <div id="form-overlay">
+              <p class="font-size-4 margin-bottom-16 poppins-semibold">
+                Get In Touch
+              </p>
+              <form class="p-10" @submit.prevent="">
+                <div
+                  v-for="(field, index) in fields"
+                  v-scope="FieldComponent({
+                            field: field,
+                            isInvalid:()=> !!invalids[field.key],
+                            invalidMessage: () => invalids[field.key],
+                            validate: ()=> validateField(field)
+                          })"
+                  class="display-grid"
+                ></div>
+                <button @click="submit">
+                  Submit
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </section>
     </div>
     <script type="module" src="dist\main.js" type="module"></script>
+
+    <template id="field-component-template">
+      <!--Form Field-->
+      <input
+        v-if="field.key !== 'message'"
+        class="textInput"
+        :placeholder="field.label"
+        type="text"
+        v-model="field.value"
+        :class="{'input-error' : isInvalid}"
+        @input="validate"
+      />
+      <textarea
+        v-if="field.key === 'message'"
+        class="textInput"
+        :placeholder="field.label"
+        type="text"
+        v-model="field.value"
+        :class="{'input-error' : isInvalid}"
+        @input="validate"
+      ></textarea>
+      <div class="text-error">
+        <span v-if="isInvalid">
+          {{invalidMessage}}
+        </span>
+      </div>
+    </template>
   </body>
 </html>
