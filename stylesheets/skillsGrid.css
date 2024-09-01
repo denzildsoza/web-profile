@@ -1,7 +1,6 @@
 #skill-grid-container {
   height: 100%;
   margin-top: 1.8rem;
-  background: black;
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   grid-template-areas:
@@ -272,16 +271,35 @@
   gap: 8px;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   #processes {
     grid-area: processes;
     display: grid;
     margin-top: 16px;
     grid-template-columns: auto-fit;
     grid-template-areas:
-      "devOps scrum dynamicProgramming"
-      "DataStructures softwareDesign algorithms "
-      "systemDesign . .";
+      "devOps scrum"
+      "dynamicProgramming DataStructures"
+      "softwareDesign algorithms "
+      "systemDesign .";
+    gap: 8px;
+  }
+}
+
+@media (max-width: 400px) {
+  #processes {
+    grid-area: processes;
+    display: grid;
+    margin-top: 16px;
+    grid-template-columns: auto-fit;
+    grid-template-areas:
+      "devOps"
+      "scrum"
+      "dynamicProgramming"
+      "DataStructures"
+      "softwareDesign"
+      "algorithms"
+      "systemDesign";
     gap: 8px;
   }
 }

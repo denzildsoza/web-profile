@@ -1,18 +1,39 @@
 #homepage-section {
   background-color: var(--backgroundPrimary);
-  border-bottom: 1px solid #000000;
+}
+
+/* #about-section {
+  height: 100%;
+  min-height: 100%;
+  height: fit-content;
+  } */
+
+#skills-section {
+  padding-block: 26.4px;
+}
+
+#experience-section {
+  background-color: #ffffff;
+}
+
+/* #education-section {
+  } */
+
+#contact-section {
+  --black: #1d1d1d;
+  --gradient-blue: rgba(122, 167, 255, 0.32);
+  --gradient-red: rgba(255, 1, 1, 0.15);
+  --white: white;
+  background-color: var(--black);
+  background-image: radial-gradient(circle farthest-corner at 100% 100%, var(--gradient-blue), transparent 44%), radial-gradient(circle farthest-corner at 0% 100%, var(--gradient-red), transparent 32%);
+  color: var(--white);
+  min-height: 100%;
+  width: 100%;
 }
 
 #home-page-content {
   color: var(--contentPrimary);
-  margin: 0px;
-  font-size: 4rem;
-  height: 100%;
   max-width: var(--maxWidth);
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 #flower-background {
@@ -26,23 +47,12 @@
   font-size: 4rem;
 }
 
-#about-section {
-  height: 100%;
-  min-height: 100%;
-  height: fit-content;
-}
-
 #about-page-content {
   color: var(--contentPrimary);
-  margin: 0px;
   font-size: 4rem;
   height: 100%;
   max-width: var(--maxWidth);
   gap: 18px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 #about-page-text {
@@ -55,26 +65,10 @@
   color: var(--contentSecendary);
 }
 
-#skills-section {
-  min-height: 100%;
-  height: fit-content;
-  padding-block: 26.4px;
-  /* background-color: var(--backgroundPrimary); */
-  /* background-image: url("../assets/images/backdropImage.jpeg"); */
-
-  /* background: radial-gradient(#9a02db, #9198e5); */
-}
-
 #skill-page-content {
   height: fit-content;
   max-width: 1250px;
   min-height: 100%;
-}
-
-#experience-section {
-  height: fit-content;
-  min-height: 100vh;
-  background-color: #ffffff;
 }
 
 #experience-content {
@@ -84,43 +78,34 @@
 }
 
 .experienceCard {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   backdrop-filter: blur(20px);
   box-shadow: 0px 6px 6px -3px rgba(0, 0, 0, 0.2),
     0px 10px 14px 1px rgba(0, 0, 0, 0.14), 0px 4px 18px 3px rgba(0, 0, 0, 0.12);
   border-radius: 8px;
+  padding: 0.1rem 0.8rem 4rem;
+  margin-bottom: 4rem;
+  background-color: #ffffff;
 }
 
 .experienceCard li {
   color: black;
 }
 
-#education-section {
-  height: 100%;
-}
-#contact-section {
-  background-color: #e7f0ff;
-  min-height: 100vh;
-  height: fit-content;
-}
-
 #contact-section-content {
   max-width: var(--maxWidth);
-  height: 100vh;
+  padding: 1rem;
+  width: 100%;
   display: grid;
-  margin: auto;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   grid-template-rows: 1fr;
   justify-content: center;
+  min-height: fit-content !important;
+  gap: 16px;
 }
 
 #get-in-touch {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   display: block;
+  width: 100%;
   margin: auto;
 }
 
@@ -183,7 +168,7 @@ button {
   background-clip: padding-box;
   border: 1px solid #ced4da;
   cursor: pointer;
-  background-color: #1264ff;
+  background-color: black;
   color: #ffffff;
   border-radius: 4rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -220,4 +205,31 @@ label {
 
 .display-grid {
   display: grid;
+}
+
+.box {
+  position: relative;
+  margin-left: 20px;
+}
+.box:before {
+  position: absolute;
+  left: -20px;
+  top: 0.6em;
+  content: "";
+  height: 0.4em;
+  width: 0.4em;
+  margin-bottom: 15px;
+  background: #212225;
+}
+
+.boxHeading {
+  font-size: 4rem;
+  padding: 1rem;
+  margin-block: 4rem;
+}
+
+.boxHeading:before {
+  height: 100%;
+  width: 0.4em;
+  top: 0;
 }

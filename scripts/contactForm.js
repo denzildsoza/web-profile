@@ -39,16 +39,16 @@ const formFields = {
       ],
     },
     {
-        label: "Message",
-        value: "",
-        key: "message",
-        validations: [
-          {
-            message: "Message is required",
-            test: (value) => value,
-          },
-        ],
-      },
+      label: "Message",
+      value: "",
+      key: "message",
+      validations: [
+        {
+          message: "Message is required",
+          test: (value) => value,
+        },
+      ],
+    },
   ],
   get isInvalid() {
     return !!Object.values(this.invalids).filter((key) => key).length;
@@ -72,6 +72,9 @@ const formFields = {
       }
     });
   },
+  resetForm() {
+    this.fields.forEach((_, index) => (this.fields[index].value = ""));
+  },
   submit() {
     // if form not valid don't submit
     this.validate();
@@ -79,6 +82,7 @@ const formFields = {
 
     // submit on valid form
     console.log("doing submit", this.fields);
+    this.resetForm();
     this.submitted = true;
   },
 };

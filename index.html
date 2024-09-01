@@ -30,13 +30,7 @@
 
   <body v-scope id="body" :class="{ displayblock: true}">
     <div id="wrapper-main" @scroll="onScrollChange($el)">
-      <div
-        id="nav-bar-wrapper"
-        @vue:mounted="scrollIntoView($el,'contact-section')"
-      >
-        <!-- <div>
-          <p id="home-nav-content" class="poppins-bold">Denzil Dsouza</p>
-        </div> -->
+      <div id="nav-bar-wrapper">
         <div id="nav-bar-content">
           <p
             v-for="(item, index) in pages"
@@ -49,13 +43,12 @@
           </p>
         </div>
       </div>
-
       <section
         id="homepage-section"
         v-effect="setPageActive($el,'home',scroll)"
-        class="flex-center height100fitcontent"
+        class="height100fitcontent flex"
       >
-        <div id="home-page-content">
+        <div id="home-page-content" class="margin-auto">
           <div id="home-page-content-right">
             <p class="poppins-light heading margin-bottom-16">
               i'm denzil, full stack web developer based in bengaluru.
@@ -74,9 +67,9 @@
       <section
         id="about-section"
         v-effect="setPageActive($el,'profile',scroll)"
-        class="flex-center height100fitcontent"
+        class="height100fitcontent flex"
       >
-        <div id="about-page-content">
+        <div id="about-page-content" class="margin-auto">
           <div id="about-text-content">
             <p
               class="poppins-semibold margin-bottom-16 about headingCharacters100"
@@ -113,20 +106,20 @@
             </p>
           </div>
           <div>
-            <img
+            <!-- <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS61bvyfBR5Atirpdsm3JDd0rNp5vqnBBLrOA&s"
               loading="lazy"
-            />
+            /> -->
           </div>
         </div>
       </section>
 
       <section
         id="skills-section"
-        class="flex-center bg-black"
+        class="bg-black height100fitcontent flex"
         v-effect="setPageActive($el,'skills',scroll)"
       >
-        <div id="skill-page-content">
+        <div id="skill-page-content" class="margin-auto">
           <p
             class="poppins-semibold margin-block-16 headingCharacters100 colorWhite"
           >
@@ -376,65 +369,108 @@
       <section
         id="experience-section"
         v-effect="setPageActive($el,'experience',scroll)"
+        class="height100fitcontent flex"
       >
-        <div id="experience-content">
+        <div id="experience-content" class="margin-auto">
           <p
-            class="poppins-semibold margin-block-16 headingCharacters100 colorBlack"
+            class="poppins-semibold margin-block-16 headingCharacters100" style="color: #050a30;"
           >
             Experience
           </p>
           <div class="experienceCard">
-            <ul>
-              <li class="poppins-regular textCharacters100">
-                Spearheaded the development of a service to convert HTML to BITS
-                XML with a team of two, utilizing dynamic programming to reduce
-                code by up to 40% and enhance performance by 22% from the past
-                versions.
-              </li>
-              <li class="poppins-regular textCharacters100">
-                Advocated for the adoption of microservices architecture to
-                maximize resource utilization and enhance overall system
-                efficiency.
-              </li>
-              <li class="poppins-regular textCharacters100">
-                Facilitated the use of SQL transactions, reducing conflict rates
-                and enhancing overall consistancy of the database.
-              </li>
-              <li class="poppins-regular textCharacters100">
-                Implemented code splitting in React components, resulting in a
-                20% reduction in loading times.
-              </li>
-            </ul>
+            <div>
+              <div class="box boxHeading">
+                <p
+                  class="poppins-semibold margin-block-16 heddingTitle colorBlack"
+                >
+                  Amnet
+                </p>
+                <p
+                  class="poppins-semibold margin-block-16 headingSubTitle colorBlack"
+                >
+                  Executive software engineer
+                </p>
+              </div>
+              <p>
+                <p class="poppins-regular box textCharacters100 ">
+                  Spearheaded the development of a service to convert HTML to
+                  BITS XML with a team of two, utilizing dynamic programming to
+                  reduce code by up to 40% and enhance performance by 22% from
+                  the past versions.
+                </p>
+                <p class="poppins-regular box textCharacters100">
+                  Advocated for the adoption of microservices architecture to
+                  maximize resource utilization and enhance overall system
+                  efficiency.
+                </p>
+                <p class="poppins-regular box textCharacters100">
+                  Facilitated the use of SQL transactions, reducing conflict
+                  rates and enhancing overall consistancy of the database.
+                </p>
+                <p class="poppins-regular box textCharacters100">
+                  Implemented code splitting in React components, resulting in a
+                  20% reduction in loading times.
+                </p>
+              </p>
+            </div>
           </div>
           <div class="experienceCard">
-            <ul>
-              <li class="poppins-regular textCharacters100">
-                Conducted in-depth research and optimized the app bundling and
-                publishing process across multiple platforms, boosting
-                productivity by up to 10%.
-              </li>
-              <li class="poppins-regular textCharacters100">
-                Promoted better component lifecycle practices, reducing
-                unnecessary API calls and boosting overall application
-                performance by 14%.
-              </li>
-            </ul>
+            <div>
+              <div class="box boxHeading">
+                <p
+                  class="poppins-semibold margin-block-16 heddingTitle colorBlack"
+                >
+                  Bustlespot
+                </p>
+                <p
+                  class="poppins-semibold margin-block-16 headingSubTitle colorBlack"
+                >
+                  Software Engineer
+                </p>
+              </div>
+              <p>
+                <p class="poppins-regular box textCharacters100">
+                  Conducted in-depth research and optimized the app bundling and
+                  publishing process across multiple platforms, boosting
+                  productivity by up to 10%.
+                </p>
+                <p class="poppins-regular box textCharacters100">
+                  Promoted better component lifecycle practices, reducing
+                  unnecessary API calls and boosting overall application
+                  performance by 14%.
+                </p>
+              </p>
+            </div>
           </div>
           <div class="experienceCard">
-            <ul>
-              <li class="poppins-regular textCharacters100">
-                Implemented custom hooks to streamline complex component logic,
-                achieving a measurable 2% increase in code reusability and
-                significantly enhancing overall development efficiency within
-                just two months of employment.
-              </li>
-              <li class="poppins-regular textCharacters100">
-                Integrated Azure IoT with a React Native application using
-                native bridging, ensuring seamless communication between
-                connected devices and the mobile platform while leveraging
-                native performance.
-              </li>
-            </ul>
+            <div>
+              <div class="box boxHeading">
+                <p
+                  class="poppins-semibold margin-block-16 heddingTitle colorBlack"
+                >
+                  Mework
+                </p>
+                <p
+                  class="poppins-semibold margin-block-16 headingSubTitle colorBlack"
+                >
+                  Software Engineer
+                </p>
+              </div>
+              <p>
+                <p class="poppins-regular box textCharacters100">
+                  Implemented custom hooks to streamline complex component
+                  logic, achieving a measurable 2% increase in code reusability
+                  and significantly enhancing overall development efficiency
+                  within just two months of employment.
+                </p>
+                <p class="poppins-regular box textCharacters100">
+                  Integrated Azure IoT with a React Native application using
+                  native bridging, ensuring seamless communication between
+                  connected devices and the mobile platform while leveraging
+                  native performance.
+                </p>
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -442,8 +478,9 @@
       <section
         id="contact-section"
         v-effect="setPageActive($el,'contact',scroll)"
+        class="height100fitcontent flex"
       >
-        <div id="contact-section-content">
+        <div id="contact-section-content" class="margin-auto">
           <div id="contacts-content" class="flex-center flex-column">
             <p class="headingCharacters100 poppins-semibold">
               Contact Me
@@ -471,7 +508,7 @@
           </div>
           <div id="get-in-touch">
             <div id="form-overlay">
-              <p class="font-size-4 margin-bottom-16 poppins-semibold">
+              <p class="font-size-4 margin-bottom-16 poppins-semibold colorBlack">
                 Get In Touch
               </p>
               <form class="p-10" @submit.prevent="">
